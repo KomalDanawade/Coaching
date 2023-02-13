@@ -1,5 +1,10 @@
 package Practise_Exer;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -8,25 +13,20 @@ import org.testng.annotations.Test;
 
 public class day1 {
 @Test
-public void dataProvider() {
+public void dataProvider() throws InterruptedException {
 	
-	System.out.println("Day1");
+	WebDriver driver = new ChromeDriver();
+	driver.get("https://google.com");
+	driver.manage().window().maximize();
+	Actions a=new Actions(driver);
+	WebElement move=driver.findElement(By.xpath("//input[@type='text']"));
+	a.moveToElement(move).sendKeys("testing").doubleClick().build().perform();
+	Thread.sleep(3000);
+	String s=driver.findElement(By.xpath("(//span[text()='testing'])[1]")).getText();
+	
+	driver.close();
 }
-//@BeforeTest
-//public void demo1() {
-//	
-//	System.out.println("Running test");
-//}
-//@BeforeClass
-//public void demo2() {
-//	
-//	System.out.println("Running class");
-//}
-//@BeforeMethod
-//public void demo3() {
-//	
-//	System.out.println("Running Method");
-//}
+
 
 
 }
