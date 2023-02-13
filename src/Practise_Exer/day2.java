@@ -11,6 +11,9 @@ public class day2 {
 public void dataProvider() {
 	
 	System.out.println("day2");
+	System.out.println("day3");
+	System.out.println("day2");
+	System.out.println("day3");
 }
 //@BeforeTest
 //public void demo1() {
